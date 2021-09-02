@@ -14,5 +14,19 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
     "id": "default",
-    "label": "Click Me!"
+    "label": "Click Me!",
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+    "id": "outline",
+    "label": "Click Me!",
+    "outline": true,
+};
+
+export const WithCallback = Template.bind({});
+WithCallback.args = {
+    "id": "with-callback",
+    "label": "click me!",
+    "callback": () => console.log("clicked!"),
 };

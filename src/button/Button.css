@@ -1,0 +1,26 @@
+.button {
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #303030;
+    border: 1px solid #303030;
+    border-radius: 1rem;
+}
+
+.button:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.outline {
+    background-color: white;
+    color: #303030;
+    border: 1px solid #303030;
+}
+
+.outline:hover {
+    background-color: #303030;
+    color: white;
+}
