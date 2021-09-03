@@ -16,7 +16,7 @@ export const Button = (props: ButtonProps) => {
             className={ `button${ props.outline ? " outline" : "" }` }
             onClick={ props.callback }
         >
-            { props.label.toUpperCase() }
+            <strong>{ props.label.toUpperCase() }</strong>
         </button>
     );
 };

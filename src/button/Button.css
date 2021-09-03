@@ -1,5 +1,5 @@
 .button {
-    font-size: 12px;
+    font-size: 14px;
     padding: 0.5rem 1rem;
     color: white;
     background-color: #303030;
@@ -8,8 +8,8 @@
 }
 
 .button:hover {
-    border-color: black;
-    background-color: black;
+    border-color: #0f0f0f;
+    background-color: #0f0f0f;
     color: white;
     cursor: pointer;
 }
@@ -17,10 +17,11 @@
 .outline {
     background-color: white;
     color: #303030;
-    border: 1px solid #303030;
+    border-color: #303030;
 }
 
 .outline:hover {
     background-color: #303030;
     color: white;
+    border-color: #303030;
 }
