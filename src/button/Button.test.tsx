@@ -7,14 +7,14 @@ import { Button, ButtonProps } from "../button/Button";
 
 describe("Button", () => {
     describe("Render", () => {
-        test("The button renders", () => {
+        test("The Button component renders", () => {
             // Setup
             const props: ButtonProps = {
                 "id": "button-test",
                 "label": "Click me!"
             };
 
-            const { getByText } = render(
+            const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
@@ -22,7 +22,7 @@ describe("Button", () => {
             );
 
             // Exercise
-            const button = getByText(props.label.toUpperCase());
+            const button = getByTestId(props.id);
 
             // Verify
             expect(button).toBeInTheDocument();
@@ -37,7 +37,7 @@ describe("Button", () => {
                 "label": "Click me!"
             };
 
-            const { getByText } = render(
+            const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
@@ -45,7 +45,7 @@ describe("Button", () => {
             );
 
             // Exercise
-            const button = getByText(props.label.toUpperCase());
+            const button = getByTestId(props.id);
 
             // Verify
             expect(button).toHaveAttribute("id", props.id);
@@ -58,7 +58,7 @@ describe("Button", () => {
                 "label": "Click me!"
             };
 
-            const { getByText } = render(
+            const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
@@ -66,7 +66,7 @@ describe("Button", () => {
             );
 
             // Exercise
-            const button = getByText(props.label.toUpperCase());
+            const button = getByTestId(props.id);
 
             // Verify
             expect(button).toBeInTheDocument();
@@ -80,7 +80,7 @@ describe("Button", () => {
                 "outline": true
             };
 
-            const { getByText } = render(
+            const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
@@ -89,7 +89,7 @@ describe("Button", () => {
             );
 
             // Exercise
-            const button = getByText(props.label.toUpperCase());
+            const button = getByTestId(props.id);
             const classList = button.classList;
 
             // Verify
@@ -108,7 +108,7 @@ describe("Button", () => {
                 "callback": () => test = "clicked"
             };
 
-            const { getByText } = render(
+            const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
@@ -117,7 +117,7 @@ describe("Button", () => {
             );
 
             // Exercise
-            const button = getByText(props.label.toUpperCase());
+            const button = getByTestId(props.id);
 
             userEvent.click(button);
 
