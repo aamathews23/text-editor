@@ -16,7 +16,7 @@ describe("Input", () => {
             const { getByLabelText } = render(<Input id="input-test" label={ props.label } />);
 
             // Exercise
-            const input = getByLabelText(props.label);
+            const input = getByLabelText(props.label.toUpperCase());
 
             // Verify
             expect(input).toBeInTheDocument();

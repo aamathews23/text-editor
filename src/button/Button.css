@@ -2,9 +2,10 @@
     font-size: 14px;
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #303030;
-    border: 1px solid #303030;
+    background-color: #424242;
+    border: 1px solid #424242;
     border-radius: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button:hover {
@@ -16,12 +17,12 @@
 
 .outline {
     background-color: white;
-    color: #303030;
-    border-color: #303030;
+    color: #424242;
+    border-color: #424242;
 }
 
 .outline:hover {
-    background-color: #303030;
+    background-color: #424242;
     color: white;
-    border-color: #303030;
+    border-color: #424242;
 }

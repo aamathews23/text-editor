@@ -1,0 +1,24 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin: 0.8rem 0.4rem;
+}
+
+.input-label, .input-text {
+    color: #424242;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.input-text {
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.4rem;
+    border: 1px solid #424242;
+    border-radius: 0.15rem;
+}
+
+.focused > * {
+    outline: none;
+    border-color: #0f0f0f;
+    color: #0f0f0f;
+}
