@@ -10,13 +10,12 @@ describe("Markdown Input", () => {
             // Setup
             const props: MarkdownInputProps = {
                 "id": "markdown-input-test",
-                "label": "First Name"
             };
 
-            const { getByLabelText } = render(<MarkdownInput id={ props.id } label={ props.label } />);
+            const { getByTestId } = render(<MarkdownInput id={ props.id } />);
 
             // Exercise
-            const markdownInput = getByLabelText(props.label.toUpperCase());
+            const markdownInput = getByTestId(props.id);
 
             // Verify
             expect(markdownInput).toBeInTheDocument();
@@ -27,17 +26,32 @@ describe("Markdown Input", () => {
         test("The MarkdownInput component gets the id prop given", () => {
             // Setup
             const props: MarkdownInputProps = {
-                "id": "input-test",
-                "label": "First Name"
+                "id": "markdown-input-test",
             };
 
-            const { getByLabelText } = render(<MarkdownInput id={ props.id } label={ props.label } />);
+            const { getByTestId } = render(<MarkdownInput id={ props.id } />);
 
             // Exercise
-            const markdownInput = getByLabelText(props.label.toUpperCase());
+            const markdownInput = getByTestId(props.id);
 
             // Verify
             expect(markdownInput).toHaveAttribute("id", props.id);
+        });
+
+        test("The MarkdownInput component gets the placeholder prop given", () => {
+            // Setup
+            const props: MarkdownInputProps = {
+                "id": "markdown-input-test",
+                "placeholder": "Enter markdown here...",
+            };
+
+            const { getByPlaceholderText } = render(<MarkdownInput id={ props.id } placeholder={ props.placeholder } />);
+
+            // Exercise
+            const markdownInput = getByPlaceholderText(props.placeholder || "");
+
+            // Verify
+            expect(markdownInput).toBeInTheDocument();
         });
     });
 });

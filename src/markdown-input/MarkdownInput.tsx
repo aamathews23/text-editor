@@ -3,7 +3,7 @@ import "./MarkdownInput.css";
 
 export interface MarkdownInputProps {
     id: string;
-    label: string;
+    placeholder?: string;
 }
 
 export const MarkdownInput = (props: MarkdownInputProps) => {
@@ -13,9 +13,8 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
                 id={ props.id }
                 data-testid={ props.id }
                 className="markdown-input"
-                autoFocus={ true }
+                placeholder={ props.placeholder }
             ></textarea>
         </div>
-        
     );
 };

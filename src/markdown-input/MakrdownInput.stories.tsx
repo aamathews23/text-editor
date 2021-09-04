@@ -14,5 +14,10 @@ const Template: Story<MarkdownInputProps> = (args) => <MarkdownInput {...args} /
 export const Default = Template.bind({});
 Default.args = {
     "id": "default",
-    "label": "First Name",
 };
+
+export const WithPlaceholder = Template.bind({});
+WithPlaceholder.args = {
+    "id": "with-placeholder",
+    "placeholder": "Enter Markdown Here...",
+}
