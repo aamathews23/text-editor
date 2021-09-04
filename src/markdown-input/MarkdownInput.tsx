@@ -4,6 +4,7 @@ import "./MarkdownInput.css";
 export interface MarkdownInputProps {
     id: string;
     placeholder?: string;
+    callback?: (input: string) => void;
 }
 
 export const MarkdownInput = (props: MarkdownInputProps) => {
@@ -14,6 +15,7 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
                 data-testid={ props.id }
                 className="markdown-input"
                 placeholder={ props.placeholder }
+                onChange={ ({ target }) => props.callback ? props.callback(target.value) : null }
             ></textarea>
         </div>
     );

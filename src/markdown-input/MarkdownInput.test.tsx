@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 // Import Component
 import { MarkdownInput, MarkdownInputProps } from "./MarkdownInput";
@@ -52,6 +53,28 @@ describe("Markdown Input", () => {
 
             // Verify
             expect(markdownInput).toBeInTheDocument();
+        });
+    });
+
+    describe("Functionality", () => {
+        test("When text is entered into the textarea the provided callback is called", () => {
+            // Setup
+            const newText = "# Heading 1";
+            let expected = "";
+
+            const props: MarkdownInputProps = {
+                "id": "markdown-input-test",
+                "callback": (text) => expected = text,
+            };
+
+            const { getByTestId } = render(<MarkdownInput id={ props.id } callback={ props.callback } />);
+
+            // Exercise
+            const markdownInput = getByTestId(props.id);
+            userEvent.type(markdownInput, newText);
+
+            // Verify
+            expect(expected).toBe(newText);
         });
     });
 });
