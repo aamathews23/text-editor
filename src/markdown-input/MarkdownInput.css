@@ -1,23 +1,21 @@
-.input {
+.container-markdown-input {
     display: flex;
-    flex-direction: column;
-    font-size: 14px;
     margin: 0.8rem 0.4rem;
 }
 
-.input-label, .input-text {
+.markdown-input {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    padding: 0.5rem 0.5rem;
     color: #424242;
     font-family: 'Open Sans', sans-serif;
-}
-
-.input-text {
-    padding: 0.4rem 0.8rem;
-    margin-top: 0.4rem;
     border: 1px solid #424242;
     border-radius: 0.15rem;
+    resize: none;
 }
 
-.focused > * {
+.markdown-input:focus {
     outline: none;
     border-color: #0f0f0f;
     color: #0f0f0f;

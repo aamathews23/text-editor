@@ -2,14 +2,14 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 // Import Component
-import { Input, InputProps } from './Input';
+import { MarkdownInput, MarkdownInputProps } from './MarkdownInput';
 
 export default {
-    component: Input,
-    title: 'Components/Input',
+    component: MarkdownInput,
+    title: 'Components/MarkdownInput',
 } as Meta;
 
-const Template: Story<InputProps> = (args) => <Input {...args} />;
+const Template: Story<MarkdownInputProps> = (args) => <MarkdownInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
