@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MarkdownInput.css";
 
 export interface MarkdownInputProps {
     id: string;
     placeholder?: string;
+    value?: string;
     callback?: (input: string) => void;
 }
 
 export const MarkdownInput = (props: MarkdownInputProps) => {
+    const [value, setValue] = useState<string>(props.value || "");
+
+    const handleOnChange = ({ target }: any) => {
+        if (props.callback) {
+            props.callback(target.value);
+        }
+
+        setValue(target.value);
+    };
+
     return (
         <div className="container-markdown-input">
             <textarea
@@ -15,7 +26,8 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
                 data-testid={ props.id }
                 className="markdown-input"
                 placeholder={ props.placeholder }
-                onChange={ ({ target }) => props.callback ? props.callback(target.value) : null }
+                value={ value }
+                onChange={ handleOnChange }
             ></textarea>
         </div>
     );

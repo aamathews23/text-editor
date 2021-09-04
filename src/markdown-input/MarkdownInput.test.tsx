@@ -54,6 +54,22 @@ describe("Markdown Input", () => {
             // Verify
             expect(markdownInput).toBeInTheDocument();
         });
+
+        test("The MarkdownInput component gets the value prop given", () => {
+            // Setup
+            const props: MarkdownInputProps = {
+                "id": "markdown-input-test",
+                "value": "# Header 1",
+            };
+
+            const { getByDisplayValue } = render(<MarkdownInput id={ props.id } value={ props.value } />);
+
+            // Exercise
+            const markdownInput = getByDisplayValue(props.value || "");
+
+            // Verify
+            expect(markdownInput).toBeInTheDocument();
+        });
     });
 
     describe("Functionality", () => {

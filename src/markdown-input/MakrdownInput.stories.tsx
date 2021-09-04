@@ -22,6 +22,12 @@ WithPlaceholder.args = {
     "placeholder": "Enter Markdown Here...",
 }
 
+export const WithValue = Template.bind({});
+WithValue.args = {
+    "id": "with-value",
+    "value": "# Header 1",
+}
+
 export const WithCallback = Template.bind({});
 WithCallback.args = {
     "id": "with-placeholder",
