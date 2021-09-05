@@ -15,3 +15,17 @@ export const Default = Template.bind({});
 Default.args = {
     "id": "default",
 };
+
+export const WithUnboldedTextAndCallback = Template.bind({});
+WithUnboldedTextAndCallback.args = {
+    "id": "with-unbolded-text-and-callback",
+    "text": "I am bold.",
+    "callback": (text) => console.log(text),
+};
+
+export const WithBoldedTextAndCallback = Template.bind({});
+WithBoldedTextAndCallback.args = {
+    "id": "with-bolded-text-and-callback",
+    "text": "**I am bold.**",
+    "callback": (text) => console.log(text),
+};
