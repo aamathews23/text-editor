@@ -1,0 +1,16 @@
+.container-markdown-output {
+    display: flex;
+    margin: 0.8rem 0.4rem;
+}
+
+.markdown-output {
+    width: 100%;
+    min-height: 100px;
+    height: 100%;
+    font-size: 14px;
+    padding: 0.5rem 0.5rem;
+    color: #424242;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #424242;
+    border-radius: 0.15rem;
+}
