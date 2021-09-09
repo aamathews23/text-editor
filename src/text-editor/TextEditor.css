@@ -1,0 +1,25 @@
+.text-editor-header, .text-editor-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #424242;
+    padding: 10px;
+}
+
+.text-editor-header {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.text-editor-footer {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.text-editor-body {
+    border: 1px solid #424242;
+    border-top: none;
+    border-bottom: none;
+}
+
+.text-editor-header > div > * {
+    margin-right: 10px;
+}
