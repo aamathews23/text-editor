@@ -13,14 +13,14 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid #dfdfdf;
+    border: 2px solid #D0D0D3;
     padding: 10px;
     border-radius: 5px 5px 0px 0px;
-    background-color: #ffffff;
+    background-color: #E8E8E9;
 `;
 
 const Body = styled.div`
-    border: 2px solid #dfdfdf;
+    border: 2px solid #D0D0D3;
     border-top: none;
     border-bottom: none;
 `;
@@ -29,10 +29,10 @@ const Footer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid #dfdfdf;
+    border: 2px solid #D0D0D3;
     padding: 10px;
     border-radius: 0px 0px 5px 5px;
-    background-color: #ffffff;
+    background-color: #E8E8E9;
 `;
 
 export interface TextEditorProps {
@@ -116,13 +116,13 @@ export const TextEditor = (props: TextEditorProps) => {
                 <Button
                     id="save-btn"
                     label="Save"
+                    contained
                     callback={ handleOnSave }
                 />
 
                 <Button
                     id="reset-btn"
                     label="Reset"
-                    outline
                     callback={ () => setMarkdown("") }
                 />
             </Footer>

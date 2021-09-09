@@ -6,14 +6,14 @@ const Div = styled.div`
 `;
 
 const Textarea = styled.textarea`
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: 20px 10px;
     margin: 0px;
     width: 100%;
     min-height: 300px;
     max-height: 300px;
     font-size: 14px;
-    color: #202020;
+    color: #161621;
     font-family: 'Open Sans', sans-serif;
     resize: none;
     outline: none;

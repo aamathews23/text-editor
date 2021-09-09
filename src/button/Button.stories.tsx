@@ -17,11 +17,11 @@ Default.args = {
     "label": "Click Me!",
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-    "id": "outline",
+export const Contained = Template.bind({});
+Contained.args = {
+    "id": "contained",
     "label": "Click Me!",
-    "outline": true,
+    "contained": true,
 };
 
 export const WithCallback = Template.bind({});

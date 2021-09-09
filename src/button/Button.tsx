@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface StyledButtonProps {
-    outline: boolean;
+    contained: boolean;
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -10,13 +10,13 @@ const StyledButton = styled.button<StyledButtonProps>`
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     font-family: 'Open Sans', sans-serif;
-    border: 1px solid #9f9f9f;
-    color: ${ props => props.outline ? "#9f9f9f" : "white" };
-    background-color: ${ props => props.outline ? "white" : "#9f9f9f" };
+    border: 1px solid ${ props => props.contained ? "#D0D0D3" : "#E8E8E9" };
+    color: #161621;
+    background-color: ${ props => props.contained ? "#D0D0D3" : "#E8E8E9" };
     &:hover {
-        border-color: ${ props => props.outline ? "#9f9f9f" : "#606060" };
-        background-color: ${ props => props.outline ? "#9f9f9f" : "#606060" };
-        color: white;
+        border-color: ${ props => props.contained ? "#B9B9BC" : "#D0D0D3" };
+        background-color: ${ props => props.contained ? "#B9B9BC" : "#D0D0D3" };
+        color: #161621;
         cursor: pointer;
     }
 `;
@@ -24,7 +24,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 export interface ButtonProps {
     id: string;
     label: string;
-    outline?: boolean;
+    contained?: boolean;
     callback?: () => void;
 }
 
@@ -33,7 +33,7 @@ export const Button = (props: ButtonProps) => {
         <StyledButton
             id={ props.id }
             data-testid={ props.id }
-            outline={ props.outline || false }
+            contained={ props.contained || false }
             onClick={ props.callback }
         >
             <strong>{ props.label.toUpperCase() }</strong>

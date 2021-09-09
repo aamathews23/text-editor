@@ -9,7 +9,7 @@ const Icon = styled.img`
     margin-right: 10px;
     &:hover {
         border-radius: 5px;
-        background-color: #dfdfdf;
+        background-color: #D0D0D3;
         cursor: pointer;
     }
 `;

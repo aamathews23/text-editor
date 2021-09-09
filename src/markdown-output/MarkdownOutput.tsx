@@ -17,7 +17,7 @@ const Output = styled.div`
     min-height: 300px;
     max-height: 300px;
     font-size: 14px;
-    color: #202020;
+    color: #161621;
     font-family: 'Open Sans', sans-serif;
     overflow-y: auto;
 `;

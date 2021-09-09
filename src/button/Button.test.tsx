@@ -72,19 +72,19 @@ describe("Button", () => {
             expect(button).toBeInTheDocument();
         });
 
-        test("The button get the outline class when given the prop", () => {
+        test("The button get the contained class when given the prop", () => {
             // Setup
             const props: ButtonProps = {
                 "id": "button-test",
                 "label": "Click me!",
-                "outline": true
+                "contained": true
             };
 
             const { getByTestId } = render(
                 <Button
                     id={ props.id }
                     label={ props.label }
-                    outline={ props.outline }
+                    contained={ props.contained }
                 />
             );
 
