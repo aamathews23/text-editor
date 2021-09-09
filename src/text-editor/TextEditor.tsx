@@ -22,22 +22,27 @@ export const TextEditor = (props: TextEditorProps) => {
             id={ props.id }
             data-testid={ props.id }
         >
-            <div>
-                <Bold
-                    id="bold-btn"
-                />
-                <Italic
-                    id="italic-btn"
-                />
+            <div className="text-editor-header">
+                <div>
+                    <Bold
+                        id="bold-btn"
+                    />
 
-                <Preview
-                    id="preview-btn"
-                    showPreview={ showPreview }
-                    callback={ (newShowPreview) => setShowPreview(!newShowPreview) }
-                />
+                    <Italic
+                        id="italic-btn"
+                    />
+                </div>
+
+                <div>
+                    <Preview
+                        id="preview-btn"
+                        showPreview={ showPreview }
+                        callback={ (newShowPreview) => setShowPreview(!newShowPreview) }
+                    />
+                </div>                
             </div>
 
-            <div>
+            <div className="text-editor-body">
                 {
                     !showPreview &&
                     <MarkdownInput
@@ -57,7 +62,7 @@ export const TextEditor = (props: TextEditorProps) => {
                 }
             </div>
 
-            <div>
+            <div className="text-editor-footer">
                 <Button
                     id="save-btn"
                     label="Save"
