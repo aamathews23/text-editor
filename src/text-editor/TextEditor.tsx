@@ -23,6 +23,19 @@ export const TextEditor = (props: TextEditorProps) => {
         setMarkdown(newMarkdown);
     };
 
+    const handleOnSave = () => {
+        const element = document.createElement("a");
+        element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(markdown)}`);
+        element.setAttribute("download", "markdown.md");
+        element.style.display = "none";
+
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    };
+
     return (
         <div
             id={ props.id }
@@ -77,6 +90,7 @@ export const TextEditor = (props: TextEditorProps) => {
                 <Button
                     id="save-btn"
                     label="Save"
+                    callback={ handleOnSave }
                 />
 
                 <Button
