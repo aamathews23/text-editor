@@ -9,7 +9,7 @@ const Icon = styled.img`
     margin-right: 10px;
     &:hover {
         border-radius: 5px;
-        background-color: #D0D0D3;
+        background-color: ${ props => props.theme.light ? "#D0D0D3" : "#161621" };
         cursor: pointer;
     }
 `;

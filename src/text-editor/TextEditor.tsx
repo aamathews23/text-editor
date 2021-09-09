@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 // Import Components
 import { Bold } from "../bold/Bold";
@@ -13,14 +13,14 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid #D0D0D3;
+    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
     padding: 10px;
     border-radius: 5px 5px 0px 0px;
-    background-color: #E8E8E9;
+    background-color: ${ props => props.theme.light ? "#E8E8E9" : "#2D2D37" };
 `;
 
 const Body = styled.div`
-    border: 2px solid #D0D0D3;
+    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
     border-top: none;
     border-bottom: none;
 `;
@@ -29,14 +29,15 @@ const Footer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid #D0D0D3;
+    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
     padding: 10px;
     border-radius: 0px 0px 5px 5px;
-    background-color: #E8E8E9;
+    background-color: ${ props => props.theme.light ? "#E8E8E9" : "#2D2D37" };
 `;
 
 export interface TextEditorProps {
     id: string;
+    light: boolean;
 }
 
 export const TextEditor = (props: TextEditorProps) => {
@@ -63,69 +64,71 @@ export const TextEditor = (props: TextEditorProps) => {
     };
 
     return (
-        <div
-            id={ props.id }
-            data-testid={ props.id }
-        >
-            <Header>
-                <div>
-                    <Bold
-                        id="bold-btn"
-                        text={ selectedText }
-                        callback={ handleOnFormat }
+        <ThemeProvider theme={ { "light": props.light } }>
+            <div
+                id={ props.id }
+                data-testid={ props.id }
+            >
+                <Header>
+                    <div>
+                        <Bold
+                            id="bold-btn"
+                            text={ selectedText }
+                            callback={ handleOnFormat }
+                        />
+
+                        <Italic
+                            id="italic-btn"
+                            text={ selectedText }
+                            callback={ handleOnFormat }
+                        />
+                    </div>
+
+                    <div>
+                        <Preview
+                            id="preview-btn"
+                            showPreview={ showPreview }
+                            callback={ (newShowPreview) => setShowPreview(!newShowPreview) }
+                        />
+                    </div>                
+                </Header>
+
+                <Body>
+                    {
+                        !showPreview &&
+                        <MarkdownInput
+                            id="markdown-input"
+                            placeholder="Enter markdown here..."
+                            value={ markdown }
+                            callback={ (newMarkdown) => setMarkdown(newMarkdown) }
+                            handleTextSelection={ setSelectedText }
+                        />
+                    }
+
+                    {
+                        showPreview &&
+                        <MarkdownOutput
+                            id="markdown-output"
+                            text={ markdown }
+                        />
+                    }
+                </Body>
+
+                <Footer>
+                    <Button
+                        id="save-btn"
+                        label="Save"
+                        contained
+                        callback={ handleOnSave }
                     />
 
-                    <Italic
-                        id="italic-btn"
-                        text={ selectedText }
-                        callback={ handleOnFormat }
+                    <Button
+                        id="reset-btn"
+                        label="Reset"
+                        callback={ () => setMarkdown("") }
                     />
-                </div>
-
-                <div>
-                    <Preview
-                        id="preview-btn"
-                        showPreview={ showPreview }
-                        callback={ (newShowPreview) => setShowPreview(!newShowPreview) }
-                    />
-                </div>                
-            </Header>
-
-            <Body>
-                {
-                    !showPreview &&
-                    <MarkdownInput
-                        id="markdown-input"
-                        placeholder="Enter markdown here..."
-                        value={ markdown }
-                        callback={ (newMarkdown) => setMarkdown(newMarkdown) }
-                        handleTextSelection={ setSelectedText }
-                    />
-                }
-
-                {
-                    showPreview &&
-                    <MarkdownOutput
-                        id="markdown-output"
-                        text={ markdown }
-                    />
-                }
-            </Body>
-
-            <Footer>
-                <Button
-                    id="save-btn"
-                    label="Save"
-                    contained
-                    callback={ handleOnSave }
-                />
-
-                <Button
-                    id="reset-btn"
-                    label="Reset"
-                    callback={ () => setMarkdown("") }
-                />
-            </Footer>
-        </div>
+                </Footer>
+            </div>
+        </ThemeProvider>
     );
 };

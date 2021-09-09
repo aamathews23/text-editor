@@ -14,4 +14,11 @@ const Template: Story<TextEditorProps> = (args) => <TextEditor {...args} />;
 export const Default = Template.bind({});
 Default.args = {
     "id": "default",
+    "light": true,
+};
+
+export const DarkMode = Template.bind({});
+DarkMode.args = {
+    "id": "dark-mode",
+    "light": false,
 };
