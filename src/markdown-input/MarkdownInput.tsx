@@ -1,5 +1,24 @@
 import React, { useEffect, useState } from "react";
-import "./MarkdownInput.css";
+import styled from "styled-components";
+
+const Div = styled.div`
+    display: flex;
+`;
+
+const Textarea = styled.textarea`
+    background-color: #dfdfdf;
+    padding: 20px 10px;
+    margin: 0px;
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    font-size: 14px;
+    color: #202020;
+    font-family: 'Open Sans', sans-serif;
+    resize: none;
+    outline: none;
+    border: none;
+`;
 
 export interface MarkdownInputProps {
     id: string;
@@ -36,16 +55,15 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
     );
 
     return (
-        <div className="container-markdown-input">
-            <textarea
+        <Div>
+            <Textarea
                 id={ props.id }
                 data-testid={ props.id }
-                className="markdown-input"
                 placeholder={ props.placeholder }
                 value={ value }
                 onChange={ handleOnChange }
                 onClick={ handleOnClick }
-            ></textarea>
-        </div>
+            ></Textarea>
+        </Div>
     );
 };
