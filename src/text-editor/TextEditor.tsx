@@ -18,6 +18,11 @@ export const TextEditor = (props: TextEditorProps) => {
     const [showPreview, setShowPreview] = useState<boolean>(false);
     const [selectedText, setSelectedText] = useState<string>("");
 
+    const handleOnFormat = (text: string) => {
+        const newMarkdown = markdown.replace(selectedText, text);
+        setMarkdown(newMarkdown);
+    };
+
     return (
         <div
             id={ props.id }
@@ -28,11 +33,13 @@ export const TextEditor = (props: TextEditorProps) => {
                     <Bold
                         id="bold-btn"
                         text={ selectedText }
+                        callback={ handleOnFormat }
                     />
 
                     <Italic
                         id="italic-btn"
                         text={ selectedText }
+                        callback={ handleOnFormat }
                     />
                 </div>
 
