@@ -17,6 +17,10 @@ export const TextEditor = (props: TextEditorProps) => {
     const [markdown, setMarkdown] = useState<string>("");
     const [showPreview, setShowPreview] = useState<boolean>(false);
 
+    const handleMarkdownReset = () => {
+        setMarkdown("");
+    };
+
     return (
         <div
             id={ props.id }
@@ -72,6 +76,7 @@ export const TextEditor = (props: TextEditorProps) => {
                     id="reset-btn"
                     label="Reset"
                     outline
+                    callback={ handleMarkdownReset }
                 />
             </div>
         </div>

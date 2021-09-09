@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MarkdownInput.css";
 
 export interface MarkdownInputProps {
@@ -18,6 +18,13 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
 
         setValue(target.value);
     };
+
+    useEffect(
+        () => {
+            setValue(props.value || "");
+        },
+        [props.value]
+    );
 
     return (
         <div className="container-markdown-input">
