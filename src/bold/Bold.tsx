@@ -1,7 +1,16 @@
 import React from "react";
-import "./Bold.css";
+import styled from "styled-components";
 
 import BoldIcon from "../icons/format_bold.png";
+
+const Icon = styled.img`
+    border: 0.1rem solid #424242;
+    border-radius: 0.3rem;
+    &:hover {
+        background-color: #ebebeb;
+        cursor: pointer;
+    }
+`;
 
 export interface BoldProps {
     id: string;
@@ -27,10 +36,9 @@ export const Bold = (props: BoldProps) => {
     };
 
     return (
-        <img
+        <Icon
             id={ props.id }
             data-testid={ props.id }
-            className="format-bold"
             src={ BoldIcon }
             alt="Bold"
             onClick={ handleOnClick }
