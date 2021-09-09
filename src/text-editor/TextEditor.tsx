@@ -16,10 +16,7 @@ export interface TextEditorProps {
 export const TextEditor = (props: TextEditorProps) => {
     const [markdown, setMarkdown] = useState<string>("");
     const [showPreview, setShowPreview] = useState<boolean>(false);
-
-    const handleMarkdownReset = () => {
-        setMarkdown("");
-    };
+    const [selectedText, setSelectedText] = useState<string>("");
 
     return (
         <div
@@ -30,10 +27,12 @@ export const TextEditor = (props: TextEditorProps) => {
                 <div>
                     <Bold
                         id="bold-btn"
+                        text={ selectedText }
                     />
 
                     <Italic
                         id="italic-btn"
+                        text={ selectedText }
                     />
                 </div>
 
@@ -54,6 +53,7 @@ export const TextEditor = (props: TextEditorProps) => {
                         placeholder="Enter markdown here..."
                         value={ markdown }
                         callback={ (newMarkdown) => setMarkdown(newMarkdown) }
+                        handleTextSelection={ setSelectedText }
                     />
                 }
 
@@ -76,7 +76,7 @@ export const TextEditor = (props: TextEditorProps) => {
                     id="reset-btn"
                     label="Reset"
                     outline
-                    callback={ handleMarkdownReset }
+                    callback={ () => setMarkdown("") }
                 />
             </div>
         </div>

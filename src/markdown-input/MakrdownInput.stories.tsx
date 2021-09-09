@@ -33,3 +33,9 @@ WithCallback.args = {
     "id": "with-placeholder",
     "callback": (input) => console.log(input),
 }
+
+export const WithTextSelection = Template.bind({});
+WithTextSelection.args = {
+    "id": "with-text-selection",
+    "handleTextSelection": (input) => console.log(input),
+}
