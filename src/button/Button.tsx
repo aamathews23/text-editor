@@ -10,12 +10,12 @@ const StyledButton = styled.button<StyledButtonProps>`
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     font-family: 'Open Sans', sans-serif;
-    border: 1px solid #424242;
-    color: ${ props => props.outline ? "#424242" : "white" };
-    background-color: ${ props => props.outline ? "white" : "#424242" };
+    border: 1px solid #9f9f9f;
+    color: ${ props => props.outline ? "#9f9f9f" : "white" };
+    background-color: ${ props => props.outline ? "white" : "#9f9f9f" };
     &:hover {
-        border-color: ${ props => props.outline ? "#424242" : "#0f0f0f" };
-        background-color: ${ props => props.outline ? "#424242" : "#0f0f0f" };
+        border-color: ${ props => props.outline ? "#9f9f9f" : "#606060" };
+        background-color: ${ props => props.outline ? "#9f9f9f" : "#606060" };
         color: white;
         cursor: pointer;
     }

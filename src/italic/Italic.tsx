@@ -6,6 +6,7 @@ import ItalicIcon from "../icons/format_italic.png";
 
 const Icon = styled.img`
     padding: 1px;
+    margin-right: 10px;
     &:hover {
         border-radius: 5px;
         background-color: #dfdfdf;

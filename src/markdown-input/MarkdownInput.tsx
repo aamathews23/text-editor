@@ -6,7 +6,7 @@ const Div = styled.div`
 `;
 
 const Textarea = styled.textarea`
-    background-color: #dfdfdf;
+    background-color: #ffffff;
     padding: 20px 10px;
     margin: 0px;
     width: 100%;
