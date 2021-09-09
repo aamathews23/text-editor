@@ -1,8 +1,17 @@
 import React from "react";
-import "./Italic.css";
+import styled from "styled-components";
 
 // Import Image
 import ItalicIcon from "../icons/format_italic.png";
+
+const Icon = styled.img`
+    border: 0.1rem solid #424242;
+    border-radius: 0.3rem;
+    &:hover {
+        background-color: #ebebeb;
+        cursor: pointer;
+    }
+`;
 
 export interface ItalicProps {
     id: string;
@@ -28,10 +37,9 @@ export const Italic = (props: ItalicProps) => {
     };
 
     return (
-        <img
+        <Icon
             id={ props.id }
             data-testid={ props.id }
-            className="format-italic"
             src={ ItalicIcon }
             alt="Italic"
             onClick={ handleOnClick }

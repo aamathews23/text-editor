@@ -1,9 +1,0 @@
-.format-italic {
-    border: 0.1rem solid #424242;
-    border-radius: 0.3rem;
-}
-
-.format-italic:hover {
-    background-color: #ebebeb;
-    cursor: pointer;
-}
