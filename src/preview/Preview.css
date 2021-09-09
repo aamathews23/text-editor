@@ -1,9 +1,0 @@
-.preview {
-    border: 0.1rem solid #424242;
-    border-radius: 0.3rem;
-}
-
-.preview:hover {
-    background-color: #ebebeb;
-    cursor: pointer;
-}

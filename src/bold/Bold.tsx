@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+// Import Image
 import BoldIcon from "../icons/format_bold.png";
 
 const Icon = styled.img`
-    border: 0.1rem solid #424242;
-    border-radius: 0.3rem;
+    padding: 1px;
     &:hover {
-        background-color: #ebebeb;
+        border-radius: 5px;
+        background-color: #dfdfdf;
         cursor: pointer;
     }
 `;

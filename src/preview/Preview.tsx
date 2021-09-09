@@ -1,7 +1,17 @@
 import React from "react";
-import "./Preview.css";
+import styled from "styled-components";
 
+// Import Image
 import PreviewIcon from "../icons/preview.png";
+
+const Icon = styled.img`
+    padding: 1px;
+    &:hover {
+        border-radius: 5px;
+        background-color: #dfdfdf;
+        cursor: pointer;
+    }
+`;
 
 export interface PreviewProps {
     id: string;
@@ -11,10 +21,9 @@ export interface PreviewProps {
 
 export const Preview = (props: PreviewProps) => {
     return (
-        <img
+        <Icon
             id={ props.id }
             data-testid={ props.id }
-            className="preview"
             src={ PreviewIcon }
             alt="Preview"
             onClick={ () => props.callback ? props.callback(props.showPreview || false) : null }

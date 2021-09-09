@@ -5,10 +5,10 @@ import styled from "styled-components";
 import ItalicIcon from "../icons/format_italic.png";
 
 const Icon = styled.img`
-    border: 0.1rem solid #424242;
-    border-radius: 0.3rem;
+    padding: 1px;
     &:hover {
-        background-color: #ebebeb;
+        border-radius: 5px;
+        background-color: #dfdfdf;
         cursor: pointer;
     }
 `;
