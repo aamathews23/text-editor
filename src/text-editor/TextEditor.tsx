@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./TextEditor.css";
+import styled from "styled-components";
 
 // Import Components
 import { Bold } from "../bold/Bold";
@@ -8,6 +8,32 @@ import { Italic } from "../italic/Italic";
 import { MarkdownInput } from "../markdown-input/MarkdownInput";
 import { MarkdownOutput } from "../markdown-output/MarkdownOutput";
 import { Preview } from "../preview/Preview";
+
+const Header = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #dfdfdf;
+`;
+
+const Body = styled.div`
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-bottom: none;
+`;
+
+const Footer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #dfdfdf;
+`;
 
 export interface TextEditorProps {
     id: string;
@@ -41,7 +67,7 @@ export const TextEditor = (props: TextEditorProps) => {
             id={ props.id }
             data-testid={ props.id }
         >
-            <div className="text-editor-header">
+            <Header>
                 <div>
                     <Bold
                         id="bold-btn"
@@ -63,9 +89,9 @@ export const TextEditor = (props: TextEditorProps) => {
                         callback={ (newShowPreview) => setShowPreview(!newShowPreview) }
                     />
                 </div>                
-            </div>
+            </Header>
 
-            <div className="text-editor-body">
+            <Body>
                 {
                     !showPreview &&
                     <MarkdownInput
@@ -84,9 +110,9 @@ export const TextEditor = (props: TextEditorProps) => {
                         text={ markdown }
                     />
                 }
-            </div>
+            </Body>
 
-            <div className="text-editor-footer">
+            <Footer>
                 <Button
                     id="save-btn"
                     label="Save"
@@ -99,7 +125,7 @@ export const TextEditor = (props: TextEditorProps) => {
                     outline
                     callback={ () => setMarkdown("") }
                 />
-            </div>
+            </Footer>
         </div>
     );
 };
