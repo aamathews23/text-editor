@@ -10,4 +10,5 @@
     font-size: 14px;
     color: #424242;
     font-family: 'Open Sans', sans-serif;
+    overflow-y: auto;
 }
