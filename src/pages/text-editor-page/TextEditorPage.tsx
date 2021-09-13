@@ -15,10 +15,12 @@ export const TextEditorPage = () => {
     return (
         <>
             <Header id="text-editor-page-header" />
+            
             <Body>
                 <TextEditor id="text-editor" dark={ false } />
             </Body>
-            <Footer id="text-editor-page-footer" />
+
+            <Footer id="text-editor-page-footer" />         
         </>
     );
 };

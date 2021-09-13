@@ -9,6 +9,12 @@ import { MarkdownInput } from "../../components/markdown-input/MarkdownInput";
 import { MarkdownOutput } from "../../components/markdown-output/MarkdownOutput";
 import { Preview } from "../../components/preview/Preview";
 
+const Content = styled.div`
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+`;
+
 const Header = styled.div`
     display: flex;
     flex-direction: row;
@@ -23,6 +29,9 @@ const Body = styled.div`
     border: 2px solid ${ props => props.theme.dark ? "#5C5C64" : "#D0D0D3" };
     border-top: none;
     border-bottom: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 `;
 
 const Footer = styled.div`
@@ -65,7 +74,7 @@ export const TextEditor = (props: TextEditorProps) => {
 
     return (
         <ThemeProvider theme={ { "dark": props.dark } }>
-            <div
+            <Content
                 id={ props.id }
                 data-testid={ props.id }
             >
@@ -128,7 +137,7 @@ export const TextEditor = (props: TextEditorProps) => {
                         callback={ () => setMarkdown("") }
                     />
                 </Footer>
-            </div>
+            </Content>
         </ThemeProvider>
     );
 };

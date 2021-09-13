@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Div = styled.div`
-    display: flex;
-`;
-
 const Textarea = styled.textarea`
     background-color: ${ props => props.theme.dark ? "#161621" : "#FFFFFF" };
     padding: 20px 10px;
     margin: 0px;
     width: 100%;
-    min-height: 600px;
-    max-height: 600px;
+    height: 100%;
+    box-sizing: border-box;
     font-size: 14px;
     color: ${ props => props.theme.dark ? "#FFFFFF" : "#161621" };
     font-family: 'Open Sans', sans-serif;
@@ -55,15 +51,13 @@ export const MarkdownInput = (props: MarkdownInputProps) => {
     );
 
     return (
-        <Div>
-            <Textarea
-                id={ props.id }
-                data-testid={ props.id }
-                placeholder={ props.placeholder }
-                value={ value }
-                onChange={ handleOnChange }
-                onClick={ handleOnClick }
-            ></Textarea>
-        </Div>
+        <Textarea
+            id={ props.id }
+            data-testid={ props.id }
+            placeholder={ props.placeholder }
+            value={ value }
+            onChange={ handleOnChange }
+            onClick={ handleOnClick }
+        ></Textarea>
     );
 };
