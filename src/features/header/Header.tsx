@@ -18,7 +18,7 @@ export interface HeaderProps {
 
 export const Header = (props: HeaderProps) => {
     return (
-        <Div id={ props.id }>
+        <Div id={ props.id } data-testid={ props.id }>
             <h1>Markdown App</h1>
         </Div>
     );

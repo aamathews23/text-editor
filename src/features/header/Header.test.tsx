@@ -12,10 +12,10 @@ describe("Header", () => {
                 "id": "header-test",
             };
 
-            const { getByText } = render(<Header id={ props.id } />);
+            const { getByTestId } = render(<Header id={ props.id } />);
 
             // Exercise
-            const header = getByText("Markdown App");
+            const header = getByTestId(props.id);
 
             // Verify
             expect(header).toBeInTheDocument();
@@ -29,10 +29,10 @@ describe("Header", () => {
                 "id": "header-test",
             };
 
-            const { getByText } = render(<Header id={ props.id } />);
+            const { getByTestId } = render(<Header id={ props.id } />);
 
             // Exercise
-            const header = getByText("Markdown App");
+            const header = getByTestId(props.id);
 
             // Verify
             expect(header).toHaveAttribute("id", props.id);

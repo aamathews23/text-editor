@@ -71,30 +71,6 @@ describe("Button", () => {
             // Verify
             expect(button).toBeInTheDocument();
         });
-
-        test("The button get the contained class when given the prop", () => {
-            // Setup
-            const props: ButtonProps = {
-                "id": "button-test",
-                "label": "Click me!",
-                "contained": true
-            };
-
-            const { getByTestId } = render(
-                <Button
-                    id={ props.id }
-                    label={ props.label }
-                    contained={ props.contained }
-                />
-            );
-
-            // Exercise
-            const button = getByTestId(props.id);
-            const classList = button.classList;
-
-            // Verify
-            expect(classList).toContain("outline");
-        });
     });
 
     describe("Functionality", () => {
