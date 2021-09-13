@@ -11,13 +11,13 @@ const IconWrapper = styled.div`
     height: 24px;
     &:hover {
         border-radius: 5px;
-        background-color: ${ props => props.theme.light ? "#D0D0D3" : "#161621" };
+        background-color: ${ props => props.theme.dark ? "#161621" : "#D0D0D3" };
         cursor: pointer;
     }
 `;
 
 const Icon = styled.img`
-    ${ props => props.theme.light ? "" : "filter: invert(1) sepia(0) saturate(1) hue-rotate(255deg);" }
+    ${ props => props.theme.dark ? "filter: invert(1) sepia(0) saturate(1) hue-rotate(255deg);" : "" }
 `;
 
 export interface BoldProps {

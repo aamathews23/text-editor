@@ -11,24 +11,24 @@ const StyledButton = styled.button<StyledButtonProps>`
     border-radius: 1rem;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid ${ props => props.contained ? 
-        (props.theme.light ? "#D0D0D3" : "#45454D") : 
-        (props.theme.light ? "#E8E8E9" : "#2D2D37")
+        (props.theme.dark ? "#45454D" : "#D0D0D3") : 
+        (props.theme.dark ? "#2D2D37" : "#E8E8E9")
     };
-    color: ${ props => props.theme.light ? "#161621" : "#FFFFFF" };
+    color: ${ props => props.theme.dark ? "#FFFFFF" : "#161621" };
     background-color: ${ props => props.contained ?
-        (props.theme.light ? "#D0D0D3" : "#45454D") :
-        (props.theme.light ? "#E8E8E9" : "#2D2D37")
+        (props.theme.dark ? "#45454D" : "#D0D0D3") :
+        (props.theme.dark ? "#2D2D37" : "#E8E8E9")
     };
     &:hover {
         border-color: ${ props => props.contained ?
-            (props.theme.light ? "#B9B9BC" : "#161621") :
-            (props.theme.light ? "#D0D0D3" : "#161621")
+            (props.theme.dark ? "#161621" : "#B9B9BC") :
+            (props.theme.dark ? "#161621" : "#D0D0D3")
         };
         background-color: ${ props => props.contained ?
-            (props.theme.light ? "#B9B9BC" : "#161621") :
-            (props.theme.light ? "#D0D0D3" : "#161621")
+            (props.theme.dark ? "#161621" : "#B9B9BC") :
+            (props.theme.dark ? "#161621" : "#D0D0D3")
         };
-        color: ${ props => props.theme.light ? "#161621" : "#FFFFFF" };
+        color: ${ props => props.theme.dark ? "#FFFFFF" : "#161621" };
         cursor: pointer;
     }
 `;

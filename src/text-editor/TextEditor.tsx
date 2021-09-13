@@ -13,14 +13,14 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
+    border: 2px solid ${ props => props.theme.dark ? "#5C5C64" : "#D0D0D3" };
     padding: 10px;
     border-radius: 5px 5px 0px 0px;
-    background-color: ${ props => props.theme.light ? "#E8E8E9" : "#2D2D37" };
+    background-color: ${ props => props.theme.dark ? "#2D2D37" : "#E8E8E9" };
 `;
 
 const Body = styled.div`
-    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
+    border: 2px solid ${ props => props.theme.dark ? "#5C5C64" : "#D0D0D3" };
     border-top: none;
     border-bottom: none;
 `;
@@ -29,15 +29,15 @@ const Footer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid ${ props => props.theme.light ? "#D0D0D3" : "#5C5C64" };
+    border: 2px solid ${ props => props.theme.dark ? "#5C5C64" : "#D0D0D3" };
     padding: 10px;
     border-radius: 0px 0px 5px 5px;
-    background-color: ${ props => props.theme.light ? "#E8E8E9" : "#2D2D37" };
+    background-color: ${ props => props.theme.dark ? "#2D2D37" : "#E8E8E9" };
 `;
 
 export interface TextEditorProps {
     id: string;
-    light: boolean;
+    dark: boolean;
 }
 
 export const TextEditor = (props: TextEditorProps) => {
@@ -64,7 +64,7 @@ export const TextEditor = (props: TextEditorProps) => {
     };
 
     return (
-        <ThemeProvider theme={ { "light": props.light } }>
+        <ThemeProvider theme={ { "dark": props.dark } }>
             <div
                 id={ props.id }
                 data-testid={ props.id }

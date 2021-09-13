@@ -10,14 +10,14 @@ const Div = styled.div`
 `;
 
 const Output = styled.div`
-    background-color: ${ props => props.theme.light ? "#FFFFFF" : "#161621" };
+    background-color: ${ props => props.theme.dark ? "#161621" : "#FFFFFF" };
     padding: 20px 10px;
     margin: 0px;
     width: 100%;
     min-height: 300px;
     max-height: 300px;
     font-size: 14px;
-    color: ${ props => props.theme.light ? "#161621" : "#FFFFFF" };
+    color: ${ props => props.theme.dark ? "#FFFFFF" : "#161621" };
     font-family: 'Open Sans', sans-serif;
     overflow-y: auto;
 `;
