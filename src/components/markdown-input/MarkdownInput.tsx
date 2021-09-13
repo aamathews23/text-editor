@@ -10,8 +10,8 @@ const Textarea = styled.textarea`
     padding: 20px 10px;
     margin: 0px;
     width: 100%;
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 600px;
+    max-height: 600px;
     font-size: 14px;
     color: ${ props => props.theme.dark ? "#FFFFFF" : "#161621" };
     font-family: 'Open Sans', sans-serif;
