@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Import Image
-import BoldIcon from "../icons/format_bold.png";
+import BoldIcon from "../../icons/format_bold.png";
 
 const IconWrapper = styled.div`
     display: inline-block;

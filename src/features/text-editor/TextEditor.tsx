@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
 // Import Components
-import { Bold } from "../bold/Bold";
-import { Button } from "../button/Button";
-import { Italic } from "../italic/Italic";
-import { MarkdownInput } from "../markdown-input/MarkdownInput";
-import { MarkdownOutput } from "../markdown-output/MarkdownOutput";
-import { Preview } from "../preview/Preview";
+import { Bold } from "../../components/bold/Bold";
+import { Button } from "../../components/button/Button";
+import { Italic } from "../../components/italic/Italic";
+import { MarkdownInput } from "../../components/markdown-input/MarkdownInput";
+import { MarkdownOutput } from "../../components/markdown-output/MarkdownOutput";
+import { Preview } from "../../components/preview/Preview";
 
 const Header = styled.div`
     display: flex;

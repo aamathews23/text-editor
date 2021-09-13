@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Import Image
-import PreviewIcon from "../icons/preview.png";
+import PreviewIcon from "../../icons/preview.png";
 
 const IconWrapper = styled.div`
     display: inline-block;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Import Image
-import ItalicIcon from "../icons/format_italic.png";
+import ItalicIcon from "../../icons/format_italic.png";
 
 const IconWrapper = styled.div`
     display: inline-block;
